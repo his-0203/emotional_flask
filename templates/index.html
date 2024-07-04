@@ -25,15 +25,15 @@
                 {% endfor %}
             </div>
             <input type="hidden" name="character" id="selected-character">
-            <input type="text" name="user_input" placeholder="상황을 입력해 주세요" value="{{ user_input }}">
+            <input type="text" name="user_input" placeholder="Enter your situation" value="{{ user_input }}">
             <button type="submit" id="submit-button">
-                <span class="button-text">전송</span>
+                <span class="button-text">Send</span>
                 <div class="spinner" id="button-spinner" style="display: none;"></div>
             </button>
         </form>
         {% if response %}
             <section class="response-section">
-                <h2>응답</h2>
+                <h2>Hmm...💬</h2>
                 <p>{{ response }}</p>
             </section>
         {% endif %}
@@ -49,7 +49,7 @@
         document.getElementById('character-form').addEventListener('submit', event => {
             if (!document.getElementById('selected-character').value) {
                 event.preventDefault();
-                alert('캐릭터를 선택해주세요.');
+                alert('Please select a character.');
             } else {
                 document.getElementById('submit-button').disabled = true;
                 document.querySelector('.button-text').style.display = 'none';
