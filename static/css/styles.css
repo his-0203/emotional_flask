@@ -32,7 +32,7 @@ header {
 }
 
 main {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(0, 0, 0, 0.4);
     padding: 32px;
     margin-top: 40px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -48,7 +48,7 @@ main {
 
 .instruction-text {
     font-size: 24px;
-    color: #333;
+    color: #ffffff;
     margin-top: 0px;
     margin-bottom: 40px;
     text-align: center;
@@ -76,8 +76,8 @@ main {
 }
 
 .character:hover img, .character.selected img {
-    outline: 4px solid #6200ea;
-    box-shadow: 0 0 15px #6200ea, 0 0 20px #ffd900 inset;
+    outline: 4px solid #79dffb;
+    box-shadow: 0 0 15px #79dffb, 0 0 20px #79dffb inset;
 }
 
 .character p {
@@ -85,6 +85,7 @@ main {
     margin-top: 8px;
     font-weight: bold;
     word-break: break-all;
+    color: white;
 }
 
 form {
@@ -154,7 +155,7 @@ textarea {
     bottom: 12px;
     right: 12px;
     font-size: 12px;
-    color: #6200ea;
+    color: #919191;
 }
 
 .button-group {
@@ -174,22 +175,22 @@ button, .support-button {
 }
 
 button {
-    background-color: #6200ea;
-    color: white;
+    background-color: #79dffb;
+    color: rgb(0, 0, 0);
     border: none;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #3700b3;
+    background-color: #31a5c5;
 }
 
 .support-button {
     background-color: transparent; /* 배경색 제거 */
-    color: black; /* 텍스트 색상 설정 */
+    color: white; /* 텍스트 색상 설정 */
     text-decoration: none;
     cursor: pointer;
-    border: 2px solid black; /* 테두리 색상 설정 */
+    border: 2px solid white; /* 테두리 색상 설정 */
     text-align: center;
 }
 
@@ -230,7 +231,7 @@ button:hover {
 .response-section h2 {
     margin-top: 0;
     margin-bottom: 12px;
-    color: #bf9ded;
+    color: #79dffb;
 }
 
 .response-section p {
@@ -256,6 +257,10 @@ footer p {
 
 /* 추가된 미디어 쿼리 */
 @media (max-width: 480px) {
+
+    main {
+        margin-top: 20px;
+    }
 
     .instruction-text {
         font-size: 16px;
