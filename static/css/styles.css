@@ -29,8 +29,8 @@ main {
 .character-selection {
     display: grid;
     grid-template-columns: repeat(5, 1fr); /* 한 줄에 5개의 열을 설정 */
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 24px;
+    margin-bottom: 24px;
 }
 
 .character {

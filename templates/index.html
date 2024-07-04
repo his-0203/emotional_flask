@@ -20,7 +20,7 @@
             <div class="character-selection">
                 {% for key, value in content_map.items() %}
                     <div class="character" data-character="{{ key }}">
-                        <img src="{{ url_for('static', filename='images/' + key|urlencode + '.png') }}" alt="{{ key }}">
+                        <img src="{{ url_for('static', filename='images/' + key + '.png') }}" alt="{{ key }}">
                         <p>{{ key }}</p>
                     </div>
                 {% endfor %}
