@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 from openai import OpenAI
 from dotenv import load_dotenv
 import os
+import urllib.parse
 
 # .env 파일 로드
 load_dotenv()
