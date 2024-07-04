@@ -23,23 +23,52 @@ main {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     width: 90%;
-    max-width: 600px;
+    max-width: 800px;
+}
+
+.character-selection {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 한 줄에 5개의 열을 설정 */
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.character {
+    text-align: center;
+    cursor: pointer;
+}
+
+.character img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.character:hover img, .character.selected img {
+    border-color: #6200ea;
+}
+
+.character p {
+    margin-top: 10px;
+    font-weight: bold;
 }
 
 form {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-label, select, input, button {
-    margin-bottom: 10px;
-}
-
-select, input {
+input[type="text"] {
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 500px;
 }
 
 button {
@@ -50,6 +79,8 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    width: 100%;
+    max-width: 500px;
 }
 
 button:hover {
@@ -61,4 +92,6 @@ button:hover {
     padding: 20px;
     background-color: #e0e0e0;
     border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
 }

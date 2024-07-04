@@ -16,14 +16,17 @@
         <h1>인사이드 아웃 공감소</h1>
     </header>
     <main>
-        <form method="POST">
-            <label for="character">캐릭터를 선택하세요:</label>
-            <select name="character" id="character">
+        <form method="POST" id="character-form">
+            <div class="character-selection">
                 {% for key, value in content_map.items() %}
-                    <option value="{{ key }}" {% if key == selected_option %}selected{% endif %}>{{ key }}</option>
+                    <div class="character" data-character="{{ key }}">
+                        <img src="{{ url_for('static', filename='images/' + key + '.png') }}" alt="{{ key }}">
+                        <p>{{ key }}</p>
+                    </div>
                 {% endfor %}
-            </select>
-            <input type="text" name="user_input" placeholder="{{ content_map[selected_option]['placeholder'] if selected_option else '' }}" value="{{ user_input }}">
+            </div>
+            <input type="hidden" name="character" id="selected-character">
+            <input type="text" name="user_input" placeholder="상황을 입력해 주세요" value="{{ user_input }}">
             <button type="submit">전송</button>
         </form>
         {% if response %}
@@ -33,5 +36,20 @@
             </section>
         {% endif %}
     </main>
+    <script>
+        document.querySelectorAll('.character').forEach(item => {
+            item.addEventListener('click', event => {
+                document.getElementById('selected-character').value = item.getAttribute('data-character');
+                document.querySelectorAll('.character').forEach(c => c.classList.remove('selected'));
+                item.classList.add('selected');
+            });
+        });
+        document.getElementById('character-form').addEventListener('submit', event => {
+            if (!document.getElementById('selected-character').value) {
+                event.preventDefault();
+                alert('캐릭터를 선택해주세요.');
+            }
+        });
+    </script>
 </body>
 </html>
