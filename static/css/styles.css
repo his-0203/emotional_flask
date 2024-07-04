@@ -46,6 +46,15 @@ main {
     margin-bottom: 60px; /* main 요소 아래쪽 여백 추가 */
 }
 
+.instruction-text {
+    font-size: 24px;
+    color: #333;
+    margin-top: 0px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: 'KCCMurukmuruk', sans-serif;
+}
+
 .character-selection {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -72,6 +81,7 @@ main {
 }
 
 .character p {
+    width: 100%;
     margin-top: 8px;
     font-weight: bold;
     word-break: break-all;
@@ -86,6 +96,12 @@ form {
     margin-bottom: 24px; /* 기본 여백 */
 }
 
+.form-row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 input[type="text"] {
     padding: 10px;
     font-size: 16px;
@@ -94,6 +110,8 @@ input[type="text"] {
     margin-bottom: 20px;
     width: 100%;
     max-width: 640px;
+    height: 100%;
+    box-sizing: border-box; /* 추가 */
 }
 
 .button-group {
@@ -107,6 +125,7 @@ input[type="text"] {
 button, .support-button {
     font-size: 16px;
     min-height: 48px;
+    min-width: 240px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -196,12 +215,20 @@ footer p {
 
 /* 추가된 미디어 쿼리 */
 @media (max-width: 480px) {
+
+    .instruction-text {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
     .character p {
-        display: none;
+        font-size: 13px;
+        width: 100%;
+        margin: 4px;
     }
 
     .character-selection {
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 12px;
         margin-bottom: 12px;
     }
