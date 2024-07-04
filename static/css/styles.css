@@ -87,6 +87,29 @@ button:hover {
     background-color: #3700b3;
 }
 
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-left-color: #6200ea;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -18px;
+    margin-left: -18px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 .response-section {
     margin-top: 20px;
     padding: 20px;
@@ -94,4 +117,15 @@ button:hover {
     border-radius: 8px;
     width: 100%;
     max-width: 500px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.response-section h2 {
+    margin-top: 0;
+    color: #6200ea;
+}
+
+.response-section p {
+    font-size: 16px;
+    line-height: 1.5;
 }

@@ -6,6 +6,9 @@
     <title>Inside Out Mindset</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1955771036175025"
+     crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -24,10 +27,11 @@
             <input type="hidden" name="character" id="selected-character">
             <input type="text" name="user_input" placeholder="상황을 입력해 주세요" value="{{ user_input }}">
             <button type="submit">전송</button>
+            <div class="spinner" id="spinner" style="display: none;"></div>
         </form>
         {% if response %}
             <section class="response-section">
-                <h2>응답</h2>
+                <h2>I think...</h2>
                 <p>{{ response }}</p>
             </section>
         {% endif %}
@@ -44,6 +48,8 @@
             if (!document.getElementById('selected-character').value) {
                 event.preventDefault();
                 alert('캐릭터를 선택해주세요.');
+            } else {
+                document.getElementById('spinner').style.display = 'block';
             }
         });
     </script>
