@@ -279,3 +279,10 @@ footer p {
     }
 
 }
+
+@media (max-width: 768px) {
+    .textarea-group{
+        margin-bottom: 20px;
+        min-height: 100px;
+    }
+}
