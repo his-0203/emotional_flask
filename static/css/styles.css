@@ -28,7 +28,7 @@ main {
 
 .character-selection {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 한 줄에 5개의 열을 설정 */
+    grid-template-columns: repeat(5, 1fr);
     gap: 24px;
     margin-bottom: 24px;
 }
@@ -59,6 +59,7 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 input[type="text"] {
@@ -81,23 +82,26 @@ button {
     cursor: pointer;
     width: 100%;
     max-width: 500px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 button:hover {
     background-color: #3700b3;
 }
 
+.button-text {
+    display: inline-block;
+}
+
 .spinner {
     border: 4px solid rgba(0, 0, 0, 0.1);
-    width: 36px;
-    height: 36px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     border-left-color: #6200ea;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -18px;
-    margin-left: -18px;
     animation: spin 1s linear infinite;
 }
 

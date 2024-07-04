@@ -26,12 +26,14 @@
             </div>
             <input type="hidden" name="character" id="selected-character">
             <input type="text" name="user_input" placeholder="상황을 입력해 주세요" value="{{ user_input }}">
-            <button type="submit">전송</button>
-            <div class="spinner" id="spinner" style="display: none;"></div>
+            <button type="submit" id="submit-button">
+                <span class="button-text">전송</span>
+                <div class="spinner" id="button-spinner" style="display: none;"></div>
+            </button>
         </form>
         {% if response %}
             <section class="response-section">
-                <h2>I think...</h2>
+                <h2>응답</h2>
                 <p>{{ response }}</p>
             </section>
         {% endif %}
@@ -49,7 +51,9 @@
                 event.preventDefault();
                 alert('캐릭터를 선택해주세요.');
             } else {
-                document.getElementById('spinner').style.display = 'block';
+                document.getElementById('submit-button').disabled = true;
+                document.querySelector('.button-text').style.display = 'none';
+                document.getElementById('button-spinner').style.display = 'block';
             }
         });
     </script>
