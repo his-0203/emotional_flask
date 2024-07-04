@@ -1,23 +1,33 @@
 <!doctype html>
-<html>
+<html lang="ko">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>인사이드 아웃 공감소</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <h1>인사이드 아웃 공감소</h1>
-    <form method="POST">
-        <label for="character">캐릭터를 선택하세요:</label>
-        <select name="character" id="character">
-            {% for key, value in content_map.items() %}
-                <option value="{{ key }}" {% if key == selected_option %}selected{% endif %}>{{ key }}</option>
-            {% endfor %}
-        </select>
-        <input type="text" name="user_input" placeholder="{{ content_map[selected_option]['placeholder'] if selected_option else '' }}" value="{{ user_input }}">
-        <button type="submit">전송</button>
-    </form>
-    {% if response %}
-        <h2>응답</h2>
-        <p>{{ response }}</p>
-    {% endif %}
+    <header>
+        <h1>인사이드 아웃 공감소</h1>
+    </header>
+    <main>
+        <form method="POST">
+            <label for="character">캐릭터를 선택하세요:</label>
+            <select name="character" id="character">
+                {% for key, value in content_map.items() %}
+                    <option value="{{ key }}" {% if key == selected_option %}selected{% endif %}>{{ key }}</option>
+                {% endfor %}
+            </select>
+            <input type="text" name="user_input" placeholder="{{ content_map[selected_option]['placeholder'] if selected_option else '' }}" value="{{ user_input }}">
+            <button type="submit">전송</button>
+        </form>
+        {% if response %}
+            <section class="response-section">
+                <h2>응답</h2>
+                <p>{{ response }}</p>
+            </section>
+        {% endif %}
+    </main>
 </body>
 </html>
