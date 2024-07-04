@@ -37,12 +37,13 @@ main {
     margin: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    width: 90%;
+    width: calc(100% - 48px); /* 양쪽 24px 여백 */
     max-width: 800px;
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-grow: 1;
+    margin-bottom: 60px; /* main 요소 아래쪽 여백 추가 */
 }
 
 .character-selection {
@@ -89,30 +90,51 @@ input[type="text"] {
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     width: 100%;
     max-width: 640px;
 }
 
-button {
-    padding: 10px;
+.button-group {
+    display: flex;
+    flex-direction: column; /* 버튼을 위아래로 배치 */
+    gap: 12px; /* 버튼 사이 간격 설정 */
+    width: 100%; /* 버튼 그룹의 폭을 100%로 설정 */
+    max-width: 320px; /* 최대 너비 설정 */
+}
+
+button, .support-button {
+    width: 100%; /* 버튼의 너비를 부모 요소의 너비로 설정 */
     font-size: 16px;
-    background-color: #6200ea;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 100%;
-    max-width: 320px;
     min-height: 48px;
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 8px;
+}
+
+button {
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
 button:hover {
     background-color: #3700b3;
+}
+
+.support-button {
+    background-color: #ffdd00;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}
+
+.support-button:hover {
+    background-color: #e6c200;
 }
 
 .button-text {
@@ -127,7 +149,6 @@ button:hover {
     border-left-color: #ece1fc;
     animation: spin 1s linear infinite;
 }
-
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -159,6 +180,20 @@ button:hover {
     font-size: 16px;
     line-height: 1.5;
     color: #f0f0f0;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
 }
 
 /* 추가된 미디어 쿼리 */

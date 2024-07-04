@@ -26,10 +26,13 @@
             </div>
             <input type="hidden" name="character" id="selected-character">
             <input type="text" name="user_input" placeholder="Enter your situation" value="{{ user_input }}">
-            <button type="submit" id="submit-button">
-                <span class="button-text">Send 💌</span>
-                <div class="spinner" id="button-spinner" style="display: none;"></div>
-            </button>
+            <div class="button-group">
+                <button type="submit" id="submit-button">
+                    <span class="button-text">Send 🚀</span>
+                    <div class="spinner" id="button-spinner" style="display: none;"></div>
+                </button>
+                <a href="https://buymeacoffee.com/his0203" target="_blank" class="support-button">Support creator ☕️</a>
+            </div>
         </form>
         {% if response %}
             <section class="response-section">
@@ -38,6 +41,9 @@
             </section>
         {% endif %}
     </main>
+    <footer>
+        <p>&copy; 2024 Heesoo-Jin. All rights reserved.</p>
+    </footer>
     <script>
         document.querySelectorAll('.character').forEach(item => {
             item.addEventListener('click', event => {
