@@ -43,7 +43,7 @@ main {
     flex-direction: column;
     align-items: center;
     flex-grow: 1;
-    margin-bottom: 60px; /* main 요소 아래쪽 여백 추가 */
+    margin-bottom: 40px; /* main 요소 아래쪽 여백 추가 */
 }
 
 .instruction-text {
@@ -243,7 +243,7 @@ button:hover {
 
 .coupang-ad-container {
     width: 100%;
-    max-width: 100%; /* 추가: 컨테이너의 최대 너비를 100%로 설정 */
+    max-width: 70%; /* 추가: 컨테이너의 최대 너비를 100%로 설정 */
     height: auto;
     margin-bottom: 20px;
 }
@@ -294,6 +294,10 @@ footer p {
 
     form {
         margin-bottom: 24px;
+    }
+
+    .coupang-ad-container {
+        height: 40%;
     }
 
 }
