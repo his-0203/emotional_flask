@@ -77,7 +77,7 @@ def home():
             response = client.chat.completions.create(
                 model="gpt-3.5-turbo",
                 messages=[
-                    {"role": "system", "content": "You are the emotional characters in Inside Out."},
+                    {"role": "system", "content": "You are the emotional characters in Inside Out. Answer in 400 characters or less."},
                     {"role": "user", "content": prompt}
                 ],
                 temperature=0.1

@@ -246,6 +246,31 @@ button:hover {
     line-height: 1.5;
     color: #f0f0f0;
     margin-top: 0px;
+    margin-bottom: 24px;
+}
+
+.x-button {
+    background-color: white;
+    color: black;
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 14px;
+    min-width: 160px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 600;
+}
+
+.x-button:hover {
+    background-color: #dcdcdc;
+}
+
+.x-logo {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
 }
 
 .coupang-ad-container {

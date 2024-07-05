@@ -32,6 +32,9 @@
     <meta name="twitter:description" content="Explore the Inside Out Mindset and get empathetic responses from your favorite characters.">
     <meta name="twitter:image" content="{{ url_for('static', filename='images/og-image.png') }}">
 
+    <script>
+        var contentMap = {{ content_map | tojson | safe }};
+    </script>
 </head>
 <body>
     <header>
@@ -66,12 +69,14 @@
         </form>
         {% if response %}
             <section class="response-section">
-                {% if selected_character in content_map %}
-                    <h2>{{ content_map[selected_character]['title'] }}</h2>
-                {% else %}
-                    <h2>Hmm...💬</h2>
-                {% endif %}
+                <h2>{{ content_map[selected_character]['title'] }}</h2>
                 <p>{{ response }}</p>
+                <div class="share-buttons">
+                    <button id="share-twitter" class="x-button">
+                        <img src="{{ url_for('static', filename='images/x-logo.png') }}" alt="X Logo" class="x-logo">
+                        Share on X
+                    </button>
+                </div>
             </section>
         {% endif %}
     </main>
@@ -122,6 +127,35 @@
                 document.getElementById('button-spinner').style.display = 'block';
             }
         });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const shareTwitterButton = document.getElementById('share-twitter');
+        
+            if (shareTwitterButton) {
+                shareTwitterButton.addEventListener('click', () => {
+
+                    const url = encodeURIComponent(window.location.href);
+        
+                    // Check user's language
+                    const userLang = navigator.language || navigator.userLanguage;
+                    let text, hashtags;
+        
+                    if (userLang === 'ko' || userLang === 'ko-KR') {
+                        text = `당신도 인사이드 아웃 캐릭터들과 감정을 나눠보세요.😊  #InsideOutMindset #감정공감`;
+                        hashtags = "InsideOutMindset,감정공감";
+                    } else {
+                        text = `Share your feelings with Inside Out characters.😊 #InsideOutMindset #EmotionalSupport`;
+                        hashtags = "InsideOutMindset,EmotionalSupport";
+                    }
+        
+                    const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${url}`;
+                    window.open(twitterUrl, '_blank');
+                });
+            }
+        });
+        
+                
+        
     </script>
 </body>
 </html>
