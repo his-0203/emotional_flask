@@ -241,6 +241,19 @@ button:hover {
     margin-top: 0px;
 }
 
+.coupang-ad-container {
+    width: 100%;
+    max-width: 100%; /* 추가: 컨테이너의 최대 너비를 100%로 설정 */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.coupang-ad-container iframe {
+    width: 100%;
+    height: auto;
+}
+
+
 footer {
     background-color: rgba(0, 0, 0, 0.8);
     color: white;

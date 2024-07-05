@@ -17,7 +17,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon"> <!-- Favicon 추가 -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1955771036175025" crossorigin="anonymous"></script>
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Inside Out Mindset">
@@ -71,6 +70,22 @@
             </section>
         {% endif %}
     </main>
+
+    <div class="coupang-ad-container">
+        <script src="https://ads-partners.coupang.com/g.js"></script>
+        <script>
+            new PartnersCoupang.G({
+                "id": 789040,
+                "trackingCode": "AF7595848",
+                "subId": null,
+                "template": "carousel",
+                "width": "100%",
+                "height": "auto"
+            });
+        </script>
+    </div>
+
+
     <footer>
         <p>&copy; 2024 Heesoo-Jin. All rights reserved.</p>
     </footer>
@@ -98,6 +113,7 @@
                 document.getElementById('button-spinner').style.display = 'block';
             }
         });
+
     </script>
 </body>
 </html>
