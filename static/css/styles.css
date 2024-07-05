@@ -284,7 +284,12 @@ footer p {
 
     .instruction-text {
         font-size: 16px;
+    }
+
+    .data-privacy {
+        font-size: 12px;
         margin-bottom: 20px;
+        margin-top: 4px;
     }
 
     .character p {
