@@ -52,7 +52,7 @@
             <input type="hidden" name="character" id="selected-character">
             <div class="form-row">
                 <div class="textarea-group">
-                    <textarea name="user_input" id="user-input" placeholder="Enter your situation" maxlength="200" oninput="updateCharCount()">{{ user_input }}</textarea>
+                    <textarea name="user_input" id="user-input" placeholder="{{ content_map[selected_character]['placeholder'] if selected_character else 'Enter your situation' }}" maxlength="200" oninput="updateCharCount()">{{ user_input }}</textarea>
                     <div id="charCount">0/200</div>
                 </div>
                 <div class="button-group">
@@ -66,7 +66,11 @@
         </form>
         {% if response %}
             <section class="response-section">
-                <h2>Hmm...💬</h2>
+                {% if selected_character in content_map %}
+                    <h2>{{ content_map[selected_character]['title'] }}</h2>
+                {% else %}
+                    <h2>Hmm...💬</h2>
+                {% endif %}
                 <p>{{ response }}</p>
             </section>
         {% endif %}
@@ -99,11 +103,15 @@
 
         document.querySelectorAll('.character').forEach(item => {
             item.addEventListener('click', event => {
-                document.getElementById('selected-character').value = item.getAttribute('data-character');
+                const selectedCharacter = item.getAttribute('data-character');
+                const characterMap = {{ content_map | tojson }};
+                document.getElementById('selected-character').value = selectedCharacter;
+                document.getElementById('user-input').setAttribute('placeholder', characterMap[selectedCharacter].placeholder);
                 document.querySelectorAll('.character').forEach(c => c.classList.remove('selected'));
                 item.classList.add('selected');
             });
         });
+
         document.getElementById('character-form').addEventListener('submit', event => {
             if (!document.getElementById('selected-character').value) {
                 event.preventDefault();
@@ -114,7 +122,6 @@
                 document.getElementById('button-spinner').style.display = 'block';
             }
         });
-
     </script>
 </body>
 </html>
