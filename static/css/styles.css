@@ -50,9 +50,16 @@ main {
     font-size: 24px;
     color: #ffffff;
     margin-top: 0px;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
     text-align: center;
     font-family: 'KCCMurukmuruk', sans-serif;
+}
+
+.data-privacy {
+    font-size: 14px; /* 작은 글씨 크기 */
+    color: #979797; /* 중간 정도의 회색 */
+    margin-bottom: 40px; /* 기존 여백과 일치 */
+    text-align: center;
 }
 
 .character-selection {
