@@ -273,16 +273,12 @@ button:hover {
     margin-right: 8px;
 }
 
-.coupang-ad-container {
-    width: 100%;
-    max-width: 70%; /* 추가: 컨테이너의 최대 너비를 100%로 설정 */
-    height: auto;
-    margin-bottom: 20px;
-}
-
-.coupang-ad-container iframe {
-    width: 100%;
-    height: auto;
+.supportText {
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 0px;
 }
 
 
