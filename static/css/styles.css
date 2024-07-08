@@ -110,35 +110,6 @@ form {
     width: 100%;
 }
 
-@media (min-width: 769px) {
-    .form-row {
-        flex-direction: row; /* 좌우 배치 */
-        justify-content: space-between; /* 좌우 공간 확보 */
-        align-items: stretch; /* 요소를 동일한 높이로 설정 */
-    }
-
-    .textarea-group {
-        flex: 1;
-        margin-right: 12px; /* 버튼 그룹과 간격 */
-        display: flex;
-        flex-direction: column;
-    }
-
-    .button-group {
-        flex-shrink: 0; /* 크기 고정 */
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        width: auto; /* 자동 너비 */
-        max-width: 240px; /* 최대 너비 설정 */
-        min-width: 200px; /* 최소 너비 */
-    }
-
-    textarea {
-        height: 100%; /* 부모 요소의 높이에 맞춤 */
-    }
-}
-
 .textarea-group {
     position: relative;
     width: 100%;
@@ -359,6 +330,33 @@ footer p {
 }
 
 @media (min-width: 769px) {
+    .form-row {
+        flex-direction: row; /* 좌우 배치 */
+        justify-content: space-between; /* 좌우 공간 확보 */
+        align-items: stretch; /* 요소를 동일한 높이로 설정 */
+    }
+
+    .textarea-group {
+        flex: 1;
+        margin-right: 12px; /* 버튼 그룹과 간격 */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .button-group {
+        flex-shrink: 0; /* 크기 고정 */
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: auto; /* 자동 너비 */
+        max-width: 240px; /* 최대 너비 설정 */
+        min-width: 200px; /* 최소 너비 */
+    }
+
+    textarea {
+        height: 100%; /* 부모 요소의 높이에 맞춤 */
+    }
+
     #ad-large-screen {
         display: block;
     }
