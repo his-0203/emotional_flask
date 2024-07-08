@@ -281,6 +281,18 @@ button:hover {
     margin-bottom: 0px;
 }
 
+#ad-container {
+    margin-bottom: 20px;
+}
+
+#ad-small-screen {
+    display: none;
+}
+
+#ad-large-screen {
+    display: none;
+}
+
 
 footer {
     background-color: rgba(0, 0, 0, 0.8);
@@ -339,5 +351,15 @@ footer p {
     .textarea-group{
         margin-bottom: 20px;
         min-height: 100px;
+    }
+
+    #ad-small-screen {
+        display: block;
+    }
+}
+
+@media (min-width: 769px) {
+    #ad-large-screen {
+        display: block;
     }
 }
