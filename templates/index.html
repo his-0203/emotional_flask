@@ -45,38 +45,36 @@
 </head>
 <body>
     <header>
-        <h1>Inside Out Mindset</h1>
+        <h1>🧠 Inside Out Mindset</h1>
+        <nav>
+            <ul class="nav-menu">
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Projects</a>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="window.open('https://movie-scene-generator.vercel.app/', '_blank')">🎞️ Movie Scene Generator</a>
+                        <p class="disable">Coming soon</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="mobile-dropdown-content" id="mobileDropdownContent">
+                <span class="close-button" id="mobileDropdownClose">&times;</span>
+                <a href="#" onclick="window.open('https://movie-scene-generator.vercel.app/', '_blank')">
+                    🎞️ Movie Scene Generator
+                </a>
+                <p class="disable">
+                    Coming soon
+                </p>
+            </div>
+        </nav>
     </header>
-    <!-- 광고 영역 -->
-    <div id="ad-container">
-        <div id="ad-small-screen">
-            <script type="text/javascript">
-                atOptions = {
-                    'key' : 'efdd045212271dacbd0cd25a5ff85554',
-                    'format' : 'iframe',
-                    'height' : 50,
-                    'width' : 320,
-                    'params' : {}
-                };
-            </script>
-            <script type="text/javascript" src="//www.topcreativeformat.com/efdd045212271dacbd0cd25a5ff85554/invoke.js"></script>
-        </div>
-        <div id="ad-large-screen">
-            <script type="text/javascript">
-                atOptions = {
-                    'key' : '7e7da6d7643b83889d06925e61cc0a8f',
-                    'format' : 'iframe',
-                    'height' : 90,
-                    'width' : 728,
-                    'params' : {}
-                };
-            </script>
-            <script type="text/javascript" src="//www.topcreativeformat.com/7e7da6d7643b83889d06925e61cc0a8f/invoke.js"></script>
-        </div>
-    </div>
     <main>
         <p class="instruction-text">Select a character and enter a situation.</p>
-        <p class="data-privacy">Data is not stored separately.</p>
+        <p class="data-privacy">Don't worry! Data is not stored separately.</p>
         <form method="POST" id="character-form">
             <div class="character-selection">
                 {% for key, value in content_map.items() %}
@@ -143,10 +141,52 @@
         </div>
     </div>
 
+    <!-- 광고 영역 -->
+    <div id="ad-container">
+        <div id="ad-small-screen">
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : 'efdd045212271dacbd0cd25a5ff85554',
+                    'format' : 'iframe',
+                    'height' : 50,
+                    'width' : 320,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.topcreativeformat.com/efdd045212271dacbd0cd25a5ff85554/invoke.js"></script>
+        </div>
+        <div id="ad-large-screen">
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : '7e7da6d7643b83889d06925e61cc0a8f',
+                    'format' : 'iframe',
+                    'height' : 90,
+                    'width' : 728,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.topcreativeformat.com/7e7da6d7643b83889d06925e61cc0a8f/invoke.js"></script>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2024 Heesoo-Jin. All rights reserved.</p>
     </footer>
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerMenu = document.getElementById('hamburgerMenu');
+            const mobileDropdownContent = document.getElementById('mobileDropdownContent');
+            const mobileDropdownClose = document.getElementById('mobileDropdownClose');
+        
+            hamburgerMenu.addEventListener('click', () => {
+                mobileDropdownContent.classList.add('show');
+            });
+
+            mobileDropdownClose.addEventListener('click', () => {
+                mobileDropdownContent.classList.remove('show');
+            });
+        });
+
         function updateCharCount() {
             const textarea = document.getElementById('user-input');
             const charCount = document.getElementById('charCount');

@@ -10,8 +10,8 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: black;
-    background-image: url('../images/bg.png');
+    background-color: white;
+    background-image: url('../images/bg_80.png');
     background-size: cover;
     background-repeat: no-repeat;
     overflow: auto;
@@ -24,22 +24,206 @@ body {
 }
 
 header {
-    background-color: #00000067;
-    color: white;
-    padding: 16px;
-    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    color: black;
+    padding: 20px 40px;
+    box-sizing: border-box; /* 추가된 부분 */
+    width: 100%;
     text-align: center;
-    font-family: 'KCCMurukmuruk', sans-serif;
-    position: relative;
-    z-index: 1;
-    margin-bottom: 12px;
+    margin-bottom: 24px;
+    border-bottom: 6px solid black;
 }
 
+h1 {
+    font-family: "KCCMurukmuruk";
+    font-style: normal;
+    text-align: left;
+    margin: 0;
+    width: 80%;
+}
+
+.nav-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-menu li {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    position: relative;
+    margin-left: 20px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    font-weight: 700;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-menu li a:hover {
+    background-color: #79dffb;
+    color: black;
+}
+
+/* Dropdown Container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px; /* 드롭다운 버튼의 패딩 추가 */
+    transition: color 0.3s, background-color 0.3s; /* 호버 효과에 필요한 트랜지션 추가 */
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    visibility: hidden; /* 숨기기 */
+    opacity: 0; /* 투명도 */
+    position: absolute;
+    right: 0;
+    background-color: black;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    max-height: 0;
+    transition: visibility 0.3s, opacity 0.3s, max-height 0.3s ease-out, padding 0.3s ease-out; /* 패딩 전환 추가 */
+    z-index: 1;
+}
+
+
+/* Dropdown Content Links */
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    min-width: 240px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover Effects */
+.dropdown-content a:hover {
+    background-color: #343a40;
+    color: #f2b600;
+}
+
+.dropdown:hover .dropdown-content {
+    visibility: visible; /* 보이기 */
+    opacity: 1; /* 투명도 복원 */
+    max-height: 200px; /* Adjust this value as needed */
+    margin-top: 16px;
+}
+
+.dropdown:hover .dropbtn {
+    color: black;
+    background-color: #fff;
+}
+
+
+/* Mobile Styles */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    height: 4px;
+    width: 32px;
+    background-color: black;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.mobile-dropdown-content {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -70%; /* 오른쪽 밖으로 숨기기 */
+    width: 70%; /* 화면의 70% 차지 */
+    height: 100%;
+    background-color: black;
+    z-index: 1;
+    overflow-y: auto; /* 스크롤 가능하도록 */
+    padding-top: 60px; /* 상단 여백 추가 */
+    transition: right 0.4s ease-in-out; /* 부드러운 애니메이션 추가 */
+}
+
+.mobile-dropdown-content.show {
+    right: 0; /* 화면 안으로 슬라이드 */
+}
+
+.mobile-dropdown-content a {
+    font-weight: 800;
+    color: white;
+    padding: 20px 0 20px 20px;
+    text-decoration: none;
+    display: flex; /* 플렉스 박스 사용 */
+    align-items: center; /* 아이템을 중앙 정렬 */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.mobile-dropdown-content a:hover {
+    background-color: #79dffb;
+    color: black;
+}
+
+.mobile-dropdown-content a .icon {
+    margin-right: 16px; /* 아이콘과 텍스트 사이 간격 */
+    font-size: 20px; /* 아이콘 크기 조정 */
+}
+
+.close-button {
+    color: white;
+    font-size: 36px;
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    cursor: pointer;
+}
+
+.dropdown-content .disable {
+    font-weight: 400;
+    color: rgb(91, 91, 91);
+}
+
+.dropdown-content .disable:hover {
+    font-weight: 400;
+    color: rgb(91, 91, 91);
+}
+
+.mobile-dropdown-content .disable {
+    font-weight: 400;
+    text-align: left;
+    color: rgb(91, 91, 91);
+    padding: 20px 16px;
+    margin: 0;
+}
+
+
 main {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: white;
     padding: 32px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    box-shadow: 17px 13px 0px rgb(0 0 0);
+    border: 6px solid black;
+    border-radius: 32px;
     width: 70%;
     max-width: 800px;
     display: flex;
@@ -50,8 +234,8 @@ main {
 }
 
 .instruction-text {
-    font-size: 24px;
-    color: #ffffff;
+    font-size: 32px;
+    color: black;
     margin-top: 0px;
     margin-bottom: 0px;
     text-align: center;
@@ -59,10 +243,12 @@ main {
 }
 
 .data-privacy {
-    font-size: 14px; /* 작은 글씨 크기 */
-    color: #979797; /* 중간 정도의 회색 */
+    font-size: 16px; /* 작은 글씨 크기 */
+    color: #bfbfbf; /* 중간 정도의 회색 */
     margin-bottom: 40px; /* 기존 여백과 일치 */
     text-align: center;
+    margin-top: 4px;
+    font-family: 'KCCMurukmuruk', sans-serif;
 }
 
 .character-selection {
@@ -81,7 +267,8 @@ main {
     width: 100%;
     height: auto;
     border-radius: 50%;
-    border: 2px solid transparent;
+    border: 3px solid black;
+    box-shadow: 3px 3px 0px rgb(0 0 0);
     transition: border-color 0.3s;
 }
 
@@ -95,7 +282,8 @@ main {
     margin-top: 8px;
     font-weight: bold;
     word-break: break-all;
-    color: white;
+    color: black;
+    font-family: 'KCCMurukmuruk', sans-serif;
 }
 
 form {
@@ -123,8 +311,9 @@ form {
 textarea {
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    border: 3px solid black;
+    box-shadow: 6px 6px 0px rgb(0 0 0);
+    border-radius: 16px;
     width: 100%;
     box-sizing: border-box;
     resize: none; /* 크기 조절 불가 */
@@ -152,13 +341,14 @@ button, .support-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 8px;
+    border-radius: 12px;
 }
 
 button {
     background-color: #79dffb;
     color: rgb(0, 0, 0);
-    border: none;
+    border: 3px solid black; /* 테두리 색상 설정 */
+    box-shadow: 6px 6px 0px rgb(0 0 0);
     cursor: pointer;
 }
 
@@ -168,10 +358,11 @@ button:hover {
 
 .support-button {
     background-color: transparent; /* 배경색 제거 */
-    color: white; /* 텍스트 색상 설정 */
+    color: black; /* 텍스트 색상 설정 */
     text-decoration: none;
     cursor: pointer;
-    border: 2px solid white; /* 테두리 색상 설정 */
+    border: 3px solid black; /* 테두리 색상 설정 */
+    box-shadow: 6px 6px 0px rgb(0 0 0);
     text-align: center;
 }
 
@@ -261,9 +452,9 @@ button:hover {
 
 
 footer {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: black;
     color: white;
-    padding: 10px;
+    padding: 24px;
     text-align: center;
     width: 100%;
     position: relative;
@@ -275,55 +466,6 @@ footer p {
 }
 
 /* 추가된 미디어 쿼리 */
-@media (max-width: 480px) {
-
-    main {
-        margin-top: 20px;
-    }
-
-    .instruction-text {
-        font-size: 16px;
-    }
-
-    .data-privacy {
-        font-size: 12px;
-        margin-bottom: 20px;
-        margin-top: 4px;
-    }
-
-    .character p {
-        font-size: 13px;
-        width: 100%;
-        margin: 4px;
-    }
-
-    .character-selection {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 12px;
-        margin-bottom: 12px;
-    }
-
-    form {
-        margin-bottom: 24px;
-    }
-
-    .coupang-ad-container {
-        height: 40%;
-    }
-
-}
-
-@media (max-width: 768px) {
-    .textarea-group{
-        margin-bottom: 20px;
-        min-height: 100px;
-    }
-
-    #ad-small-screen {
-        display: block;
-    }
-}
-
 @media (min-width: 769px) {
     .form-row {
         flex-direction: row; /* 좌우 배치 */
@@ -356,3 +498,73 @@ footer p {
         display: block;
     }
 }
+
+@media (max-width: 768px) {
+    .textarea-group{
+        margin-bottom: 20px;
+        min-height: 100px;
+    }
+
+    #ad-small-screen {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+    
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .mobile-dropdown-content.show {
+        display: block;
+    }
+
+    .mobile-dropdown-content {
+        right: -40%; /* 오른쪽 밖으로 숨기기 */
+        width: 40%; /* 화면의 70% 차지 */
+
+    }
+}
+
+@media (max-width: 480px) {
+
+    main {
+        margin-top: 20px;
+    }
+
+    .instruction-text {
+        font-size: 16px;
+    }
+
+    .data-privacy {
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-top: 4px;
+    }
+
+    .character p {
+        font-size: 13px;
+        width: 100%;
+        margin: 4px;
+    }
+
+    .character-selection {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+
+    form {
+        margin-bottom: 24px;
+    }
+
+    .mobile-dropdown-content {
+        right: -80%; /* 오른쪽 밖으로 숨기기 */
+        width: 80%; /* 화면의 70% 차지 */
+    }
+
+}
+
+
