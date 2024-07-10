@@ -105,6 +105,7 @@ h1 {
     max-height: 0;
     transition: visibility 0.3s, opacity 0.3s, max-height 0.3s ease-out, padding 0.3s ease-out; /* 패딩 전환 추가 */
     z-index: 1;
+    width: 200px;
 }
 
 
