@@ -344,7 +344,7 @@ button, .support-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 12px;
+    border-radius: 16px;
 }
 
 button {
