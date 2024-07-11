@@ -75,7 +75,7 @@ def home():
         if user_input and selected_character:
             prompt = f"{content_map[selected_character]['prompt']} {user_input}"
             response = client.chat.completions.create(
-                model="gpt-3.5-turbo",
+                model="gpt-4o",
                 messages=[
                     {"role": "system", "content": "You are the emotional characters in Inside Out. Answer in 400 characters or less."},
                     {"role": "user", "content": prompt}
