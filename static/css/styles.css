@@ -440,19 +440,6 @@ button:hover {
     margin-right: 8px;
 }
 
-#ad-container {
-    margin-bottom: 20px;
-}
-
-#ad-small-screen {
-    display: none;
-}
-
-#ad-large-screen {
-    display: none;
-}
-
-
 footer {
     background-color: black;
     color: white;
@@ -495,20 +482,12 @@ footer p {
     textarea {
         height: 100%; /* 부모 요소의 높이에 맞춤 */
     }
-
-    #ad-large-screen {
-        display: block;
-    }
 }
 
 @media (max-width: 768px) {
     .textarea-group{
         margin-bottom: 20px;
         min-height: 100px;
-    }
-
-    #ad-small-screen {
-        display: block;
     }
 
     .nav-menu {
